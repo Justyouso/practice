@@ -19,7 +19,7 @@ from sklearn import metrics
 from sklearn import neighbors
 import tensorflow as tf
 
-from config import model_path
+from config import model_path,part12_data_path
 
 
 def dense_to_one_hot(labels_dense, num_classes):
@@ -32,7 +32,7 @@ def dense_to_one_hot(labels_dense, num_classes):
 
 
 # 获取MNIST数据集
-mnist = input_data.read_data_sets("data/", one_hot=False)
+mnist = input_data.read_data_sets(part12_data_path, one_hot=False)
 
 y_train1 = []
 y_test1 = []
@@ -53,11 +53,11 @@ def logistic():
     clf = joblib.load(model_path + "/logistic.m")
     y_pred = clf.predict(x_test)
     sum = 0.0
-    for i in range(20000):
+    for i in range(2000):
         if (y_pred[i] == y_test[i]):
             sum = sum + 1
 
-    print('LogisticRegression Test set score: %f' % (sum / 20000.))
+    print('LogisticRegression Test set score: %f' % (sum / 2000.))
 
     fpr0, tpr0, threshold0 = roc_curve(y_test, y_pred,
                                        pos_label=0)  ###计算真正率和假正率
