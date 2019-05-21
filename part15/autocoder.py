@@ -4,8 +4,8 @@ from keras.datasets import mnist
 from keras.models import Model,load_model
 from keras.layers import Dense, Input
 import matplotlib.pyplot as plt
+from config import model_path
 
-model_path =  "/home/justyouso/space/data/machine/dmq/part15/models"
 
 # X shape (60,000 28x28), y shape (10,000, )
 (x_train, _), (x_test, y_test) = mnist.load_data()

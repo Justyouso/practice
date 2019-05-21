@@ -19,6 +19,8 @@ from sklearn import metrics
 from sklearn import neighbors
 import tensorflow as tf
 
+from config import model_path
+
 
 def dense_to_one_hot(labels_dense, num_classes):
     """Convert class labels from scalars to one-hot vectors."""
@@ -32,7 +34,6 @@ def dense_to_one_hot(labels_dense, num_classes):
 # 获取MNIST数据集
 mnist = input_data.read_data_sets("data/", one_hot=False)
 
-model_path = "/home/justyouso/space/data/machine/dmq/part12/models"
 y_train1 = []
 y_test1 = []
 x_train, y_train = mnist.train.next_batch(50000)

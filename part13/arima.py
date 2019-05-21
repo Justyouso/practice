@@ -8,9 +8,8 @@ import statsmodels.tsa.stattools as st
 import numpy as np
 import pyflux as pf
 from sklearn.externals import joblib
+from config import model_path
 
-# model路径
-model_path = "/home/justyouso/space/data/machine/dmq/part13/models"
 
 daily_payment = pd.read_csv('pollution.csv',parse_dates=[0], index_col=0)
 

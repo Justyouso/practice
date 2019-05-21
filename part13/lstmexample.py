@@ -13,8 +13,7 @@ from sklearn.metrics import mean_squared_error
 from keras.models import Sequential,load_model
 from keras.layers import Dense
 from keras.layers import LSTM
-
-model_path = "/home/justyouso/space/data/machine/dmq/part13/models"
+from config import model_path
 
 # 时间转换
 def parse(x):

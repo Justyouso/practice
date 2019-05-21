@@ -9,9 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 from keras.models import load_model
-
-# model路径
-model_path = "/home/justyouso/space/data/machine/dmq/part15/models"
+from config import model_path
 
 # 加载数据
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()

@@ -7,9 +7,8 @@ from sklearn.metrics import mean_squared_error as mse
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.externals import joblib
+from config import model_path
 
-# 模型路径
-model_path = "/home/justyouso/space/data/machine/dmq/part13/models"
 
 # 导入数据集
 data = pd.read_csv('pollution.csv')
@@ -40,7 +39,7 @@ regressor = joblib.load(model_path+"/linear.m")
 Y_pred = regressor.predict(X_test)
 # 计算mse
 x = mse(Y_test, Y_pred)
-print(x)
+print("mse:",x)
 # 画图
 epochs = range(1, len(Y_pred) + 1)
 plt.plot(epochs, Y_test, "bo", label='test data')
